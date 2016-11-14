@@ -6,5 +6,7 @@
     </meta>
     <projectTree name="ug-pdf2.xpr">
         <folder path="."/>
+        <folder path="../dita-ot-collection/dita-ot-2.4/"/>
+        <folder path="../eXml/samples/"/>
     </projectTree>
 </project>

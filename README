@@ -7,3 +7,9 @@ To use this customization sample please follow the next steps:
 1. Download a DITA-OT 2.4 version
 2. Copy this customization plugin into the DITA-OT/plugins folder
 3. Run the DITA-OT integrator
+
+4. execute the next command
+dita.bat -i d:/projects/oxygen-userguide-edit-link/DITA/UserManual.ditamap -f pdf2 -filter=d:/projects/oxygen-userguide-edit-link/DITA/editor.ditaval -output=d:/projects/oxygen-userguide-edit-link/output/pdf/editor -temp=d:/projects/oxygen-userguide-edit-link/temp/pdf/editor -Dpdf.formatter=fop -Dcustomization.dir=d:/projects/oxygen-userguide-edit-link/pdf_customization/editor -Dargs.fo.userconfig=d:/projects/oxygen-userguide-edit-link/pdf_customization/editor/fop.xconf -Dbasedir=d:/projects/oxygen-userguide-edit-link/DITA -Dclean.output=yes -Dclean.temp=yes  
+
+
+dita.bat -i file:/D:/workspace/eXml/samples/dita/flowers/flowers.ditamap -f pdf2 -output=D:/workspace/eXml/samples/dita/flowers/out-pdf/flowers.pdf -Dpdf.formatter=fop -Dargs.fo.userconfig=plugins/com.oxygenxml.pdf2.ug/fop.xconf -Dclean.output=yes -Dclean.temp=yes

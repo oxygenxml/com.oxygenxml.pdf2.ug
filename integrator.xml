@@ -1,4 +1,4 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<project name="com.example.print-pdf">
+<project name="com.oxygenxml.pdf2.ug">
     <import file="build.xml"/>    
 </project>
