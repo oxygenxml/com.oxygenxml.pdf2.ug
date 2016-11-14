@@ -1,0 +1,46 @@
+<svg id="Triangles_" data-name="Triangles " xmlns="http://www.w3.org/2000/svg" width="612" height="792" viewBox="0 0 612 792">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c73822;
+      }
+
+      .cls-2 {
+        fill: #d36251;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        fill: #cf5543;
+      }
+
+      .cls-4 {
+        fill: #d66e5e;
+      }
+
+      .cls-5 {
+        fill: #ca422d;
+      }
+
+      .cls-6 {
+        fill: #d15c4a;
+      }
+
+      .cls-7 {
+        fill: #cc4a36;
+      }
+    </style>
+  </defs>
+  <rect id="BGR_Ath" class="cls-1" width="612" height="792"/>
+  <path id="Polygon_1_copy_26" data-name="Polygon 1 copy 26" class="cls-2" d="M606.945,610.964H410.9l98.022-169.647Z"/>
+  <path id="Polygon_1_copy_24" data-name="Polygon 1 copy 24" class="cls-3" d="M408.674,614.243H212.63l98.022,169.648Z"/>
+  <path id="Polygon_1_copy_25" data-name="Polygon 1 copy 25" class="cls-4" d="M605.681,614.243H409.638L507.66,783.891Z"/>
+  <path id="Polygon_1_copy_30" data-name="Polygon 1 copy 30" class="cls-5" d="M506.681,438.243H310.638L408.66,607.891Z"/>
+  <path id="Polygon_1_copy_32" data-name="Polygon 1 copy 32" class="cls-6" d="M507.178,788.814H311.134l98.022-169.648Z"/>
+  <path id="Polygon_1_copy_35" data-name="Polygon 1 copy 35" class="cls-6" d="M705.379,788.814H509.335l98.022-169.648Z"/>
+  <path id="Polygon_1_copy_37" data-name="Polygon 1 copy 37" class="cls-7" d="M706.668,434.834H510.624l98.022-169.647Z"/>
+  <path id="Polygon_1_copy_45" data-name="Polygon 1 copy 45" class="cls-5" d="M310.258,788.814H114.215l98.021-169.648Z"/>
+</svg>

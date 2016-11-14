@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="18.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="pdf2_oXy_ug.xpr" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="pdf2_oXy_ug.xpr">
+        <folder path="."/>
+    </projectTree>
+</project>
