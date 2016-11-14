@@ -1,0 +1,9 @@
+This project represents a DITA-OT PFD2 customization plugin used when generating PDF for oXygen user manual.
+
+It was tested with DITA-OT 2.4.
+
+To use this customization sample please follow the next steps:
+
+1. Download a DITA-OT 2.4 version
+2. Copy this customization plugin into the DITA-OT/plugins folder
+3. Run the DITA-OT integrator

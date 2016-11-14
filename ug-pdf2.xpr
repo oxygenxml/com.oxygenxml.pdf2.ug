@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="18.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="ug-pdf2.xpr" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="ug-pdf2.xpr">
+        <folder path="."/>
+    </projectTree>
+</project>
