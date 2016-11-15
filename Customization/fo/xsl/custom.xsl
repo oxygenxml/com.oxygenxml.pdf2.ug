@@ -73,7 +73,7 @@
       test="
         exists($firstAncestorChapter) and
         not($firstAncestorChapter/preceding::*[contains(@class, ' bookmap/chapter ')])">
-      <xsl:message>Generate initial page number for <xsl:copy-of select="$mapTopic"/></xsl:message>
+      
       <xsl:attribute name="initial-page-number">1</xsl:attribute>
     </xsl:if>
   </xsl:template>
