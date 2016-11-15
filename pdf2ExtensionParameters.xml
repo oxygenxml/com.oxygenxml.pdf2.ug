@@ -1,0 +1,7 @@
+<dummy>
+    <!-- Any Ant code allowed in xslt task is possible. Common example: -->
+    <param 
+        name="oxy-ug-distribution" 
+        expression="${oxy-ug-distribution}" 
+        if="oxy-ug-distribution"/>
+</dummy>

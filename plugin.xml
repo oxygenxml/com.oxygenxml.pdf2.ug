@@ -1,7 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <plugin id="com.oxygenxml.pdf2.ug">
     <require plugin="org.dita.pdf2"/>
+    <require plugin="org.dita.pdf2.fop"/>
     
+    <feature extension="dita.conductor.pdf2.param" file="pdf2ExtensionParameters.xml"/>        
     <feature extension="dita.conductor.lib.import" file="lib/xml-apis-ext.jar"/>
     
     <feature extension="dita.conductor.transtype.check" value="oxy-ug-pdf"/>
