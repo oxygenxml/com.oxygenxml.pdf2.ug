@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project name="com.oxygenxml.pdf2.ug">
+    
+    <property name="plugin.home" value="${dita.plugin.com.oxygenxml.pdf2.ug.dir}"/>    
+    <property name="args.fo.userconfig" value="${plugin.home}/fop.xconf"/>
+    
     <target name="dita2oxy-ug-pdf.init">
         <property name="customization.dir" location="${dita.plugin.com.oxygenxml.pdf2.ug.dir}/Customization"/>
     </target>
