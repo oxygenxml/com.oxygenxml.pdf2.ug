@@ -2,7 +2,7 @@
 <plugin id="com.oxygenxml.pdf2.ug">
     <require plugin="org.dita.pdf2"/>
     
-    <feature extension="dita.conductor.lib.import" file="lib/xml-apis.jar"/>
+    <feature extension="dita.conductor.lib.import" file="lib/xml-apis-ext.jar"/>
     
     <feature extension="dita.conductor.transtype.check" value="oxy-ug-pdf"/>
     <feature extension="dita.transtype.print" value="oxy-ug-pdf"/>

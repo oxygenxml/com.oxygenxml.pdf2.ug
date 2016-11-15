@@ -2,7 +2,15 @@ This project represents a DITA-OT PFD2 customization plugin used to generate the
 
 It was tested with DITA-OT 2.4.
 
-To use this customization sample please follow the next steps:
+Project organization:
+* Customization - This folder keeps the entire customization;
+* fonts - Contains the resources for Roboto font;
+* lib - some additional used to load SVG images
+* plugin.xml - DITA-OT plugin file
+* build.xml, integrator.xml - DITA-OT build file
+* fop.xconf - Apache FOP configuration file
+
+To use this PDF customization plugin please follow the next steps:
 
 1. Download a DITA-OT 2.4 version
 2. Copy this customization plugin into the DITA-OT/plugins folder
