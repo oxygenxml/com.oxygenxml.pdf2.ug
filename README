@@ -1,4 +1,4 @@
-This project represents a DITA-OT PFD2 customization plugin used when generating PDF for oXygen user manual.
+This project represents a DITA-OT PFD2 customization plugin used to generate the oXygen user manual in PDF format.
 
 It was tested with DITA-OT 2.4.
 
