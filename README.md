@@ -1,16 +1,21 @@
-This project represents a DITA-OT PFD2 customization plugin used to generate the oXygen user manual in PDF format.
+# DITA-OT PDF2 Customization Plugin for oXygen User Guide 
 
-It was tested with DITA-OT 2.4.
+This project represents a DITA-OT PFD2 customization plugin used 
+to generate the oXygen user manual in the PDF format. 
+It was tested with **DITA-OT 2.4**.
 
 Project organization:
-* Customization - This folder keeps the entire customization;
-* fonts - Contains the resources for Roboto font;
-* lib - some additional used to load SVG images
-* plugin.xml - DITA-OT plugin file
-* build.xml, integrator.xml - DITA-OT build file
-* fop.xconf - Apache FOP configuration file
 
-To use this PDF customization plugin please follow the next steps:
+- **Customization** - This folder keeps the XSLT customization stylesheets, XML catalog and font font configuration;
+- **fonts** - Contains the resources for the **Roboto** font;
+- **lib** - some additional libraries needed to load SVG images
+- **plugin.xml** - plugin descriptor file
+- **build.xml, integrator.xml** - plugin build files
+- **fop.xconf** - the configuration file for Apache FOP 
+
+See more details about DITA-PT PDF2 plugin here http://www.dita-ot.org/2.4/dev_ref/pdf-customization.html.
+
+You can use this PDF2 customization plugin please following the next steps:
 
 1. Download a DITA-OT 2.4 version
 2. Copy this customization plugin into the DITA-OT/plugins folder
@@ -22,4 +27,3 @@ dita.bat -i d:/projects/oxygen-userguide-edit-link/DITA/UserManual.ditamap -f pd
 dita.bat -i file:/D:/workspace/eXml/samples/dita/it-book/taskbook.ditamap -f oxy-ug-pdf -output=D:/workspace/eXml/samples/dita/it-book/out-pdf -Doxy-ug-distribution=author
 
 dita.bat -i file:/D:/workspace/userguide-private/DITA/UserManual.ditamap -f oxy-ug-pdf -output=D:/workspace/userguide-private/DITA/out-pdf --filter=D:/workspace/userguide-private/DITA/author.ditaval -Doxy-ug-distribution=author
-
