@@ -19,7 +19,7 @@ You can use this PDF2 customization plugin please following the next steps:
 
 1. Download **DITA-OT 2.4** 
 2. Copy this customization plugin into the **DITA-OT/plugins** folder
-3. Run the DITA-OT integrator
+3. Run the **DITA-OT integrator**
 4. Invoke the PDF transformation using the **oxy-ug-pdf** transtype. A sample is:
 
 dita.bat -i file:/D:/workspace/userguide-private/DITA/UserManual.ditamap -f oxy-ug-pdf -output=D:/workspace/userguide-private/DITA/out-pdf --filter=D:/workspace/userguide-private/DITA/author.ditaval -Doxy-ug-distribution=author
