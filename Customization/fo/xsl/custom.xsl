@@ -7,6 +7,10 @@
   <xsl:import href="layout-masters.xsl"/>
   <xsl:import href="toc.xsl"/>
   <xsl:import href="fo-dl-as-dl.xsl"/>
+  
+  <xsl:param name="oxy-ug-distribution" select="'editor'"/>
+  
+  
   <!-- This is the default, but you can set the margins individually below. -->
   <xsl:variable name="page-margins">15mm</xsl:variable>
   <!--
@@ -14,6 +18,7 @@
         Oxygen logo and product name 
     -->
   <xsl:template name="createFrontCoverContents">
+    <xsl:message>Current distribution is <xsl:value-of select="$oxy-ug-distribution"/></xsl:message>
     <fo:block 
       space-before="85mm" 
       space-before.conditionality="retain" 
@@ -26,9 +31,16 @@
         <fo:table-body>
           <fo:table-row>
             <fo:table-cell text-align="right" start-indent="20mm">
-              <fo:block>                                
+              <fo:block>
+                <xsl:variable name="coverImageName">
+                  <xsl:choose>
+                    <xsl:when test="$oxy-ug-distribution eq 'author'">author_cover_logo.png</xsl:when>
+                    <xsl:when test="$oxy-ug-distribution eq 'developer'">developer_cover_logo.png</xsl:when>
+                    <xsl:otherwise>editor_cover_logo.png</xsl:otherwise>
+                  </xsl:choose>                  
+                </xsl:variable>                
                 <fo:external-graphic src="
-                  url({concat($artworkPrefix, '/Customization/OpenTopic/common/artwork/cover_logo.png')})"/>
+                  url({concat($artworkPrefix, '/Customization/OpenTopic/common/artwork/', $coverImageName)})"/>
               </fo:block>
             </fo:table-cell>
             <fo:table-cell padding="1mm" text-align="left" color="white">
