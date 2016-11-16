@@ -1,0 +1,9 @@
+language: xslt
+language: java
+jdk: oraclejdk8
+install:
+- echo "Installed"
+script:
+- sh .travis/publish.sh
+after_success:
+- sh .travis/deploy.sh

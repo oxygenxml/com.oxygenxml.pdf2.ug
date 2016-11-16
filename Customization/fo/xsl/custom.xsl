@@ -7,6 +7,7 @@
   <xsl:import href="layout-masters.xsl"/>
   <xsl:import href="toc.xsl"/>
   <xsl:import href="fo-dl-as-dl.xsl"/>
+  <xsl:import href="commons.xsl"/>
   
   <xsl:param name="oxy-ug-distribution" select="'editor'"/>
   
