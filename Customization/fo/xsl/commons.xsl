@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:fo="http://www.w3.org/1999/XSL/Format" 
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="xs"
     version="2.0">
+    
     <xsl:template match="*" mode="insertChapterFirstpageStaticContent">
         <xsl:param name="type" as="xs:string"/>
+        <xsl:message>override template</xsl:message>
         <fo:block>
             <xsl:attribute name="id">
                 <xsl:call-template name="generate-toc-id"/>
@@ -16,9 +19,13 @@
                             <xsl:with-param name="id" select="'Chapter with number'"/>
                             <xsl:with-param name="params">
                                 <number>
-                                    <fo:block xsl:use-attribute-sets="__chapter__frontmatter__number__container">
+                                    <!-- 
+                                        #2 - Customize the chapter header generation  
+                                        Don't generate a block for chapter number
+                                    -->
+                                    <!--<fo:block xsl:use-attribute-sets="__chapter__frontmatter__number__container">-->
                                         <xsl:apply-templates select="key('map-id', @id)[1]" mode="topicTitleNumber"/>
-                                    </fo:block>
+                                    <!--</fo:block>-->
                                 </number>
                             </xsl:with-param>
                         </xsl:call-template>
