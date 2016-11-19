@@ -164,7 +164,7 @@
                                 <fo:table-column column-label="2" column-width="10%"/>
                                 <fo:table-body>
                                     <fo:table-row>
-                                        <fo:table-cell vertical-align="top" text-align="left">
+                                        <fo:table-cell display-align="center" text-align="left">
                                             <fo:block xsl:use-attribute-sets="pdf2.ug.topic.title">
                                                 <xsl:call-template name="pullPrologIndexTerms"/>
                                                 <xsl:for-each select="*[contains(@class,' topic/title ')]">
@@ -172,7 +172,7 @@
                                                 </xsl:for-each>
                                             </fo:block>
                                         </fo:table-cell>
-                                        <fo:table-cell vertical-align="center" text-align="right">
+                                        <fo:table-cell display-align="center" text-align="right">
                                             <xsl:apply-templates select="." mode="insertChapterFirstpageStaticContent">
                                                 <xsl:with-param name="type" select="'chapter'"/>
                                             </xsl:apply-templates>
