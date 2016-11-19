@@ -22,12 +22,11 @@
     </xsl:attribute-set>
     
     <!-- 
-        FO attributes fot chapter name.
+        FO attributes for chapter name.
     -->
     <xsl:attribute-set name="pdf2.ug.topic.title" use-attribute-sets="common.title">
         <xsl:attribute name="font-size">18pt</xsl:attribute>
         <xsl:attribute name="font-weight">bold</xsl:attribute>
-        <xsl:attribute name="padding-top">16.8pt</xsl:attribute>
         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
         <xsl:attribute name="color" select="$custom_blue_color"/>
     </xsl:attribute-set>
