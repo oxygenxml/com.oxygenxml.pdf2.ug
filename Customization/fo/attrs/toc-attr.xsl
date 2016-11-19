@@ -57,7 +57,7 @@
         Chapter's summary section that is displayed immediately after the chapter's minitoc.
     -->
     <xsl:attribute-set name="pdf2.ug__toc__mini__summary">
-        <xsl:attribute name="space-before">10pt</xsl:attribute>
+        <xsl:attribute name="space-before">20pt</xsl:attribute>
     </xsl:attribute-set>
     
     <!-- 
