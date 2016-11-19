@@ -20,6 +20,17 @@
     <xsl:param name="pdf2.ug.chapter.header"/>
     
     <!-- 
+        Select the layout of the chapter's minitoc
+        
+        The possible values are:
+        * block - The blocks with chapter links and chapter descriptions will be layout in two separate blocks, 
+          one after other.
+        * dita-ot-default - The default DITA-OT rendering with a table layout with one row with two cells. 
+          The first cell presents links to the chapter's topics and the second cell presents a short description of the chapter.
+    -->
+    <xsl:param name="pdf2.ug.chapter.minitoc.layout"/>
+    
+    <!-- 
         This template is used to layout the header components of the publication 
         top level parts like: chapter, appendix, appendices, preface notices.
     -->
@@ -199,5 +210,88 @@
                 </fo:block>
             </fo:flow>
         </fo:page-sequence>
+    </xsl:template>
+    
+    <xsl:template match="*" mode="createMiniToc">
+        <xsl:choose>
+            <xsl:when test="$pdf2.ug.chapter.minitoc.layout eq 'dita-ot-default'">
+                <fo:table xsl:use-attribute-sets="__toc__mini__table">
+                    <fo:table-column xsl:use-attribute-sets="__toc__mini__table__column_1"/>
+                    <fo:table-column xsl:use-attribute-sets="__toc__mini__table__column_2"/>
+                    <fo:table-body xsl:use-attribute-sets="__toc__mini__table__body">
+                        <fo:table-row>
+                            <fo:table-cell>
+                                <fo:block xsl:use-attribute-sets="__toc__mini">
+                                    <xsl:if test="*[contains(@class, ' topic/topic ')]">
+                                        <fo:block xsl:use-attribute-sets="__toc__mini__header">
+                                            <xsl:call-template name="getVariable">
+                                                <xsl:with-param name="id" select="'Mini Toc'"/>
+                                            </xsl:call-template>
+                                        </fo:block>
+                                        <fo:list-block xsl:use-attribute-sets="__toc__mini__list">
+                                            <xsl:apply-templates select="*[contains(@class, ' topic/topic ')]" mode="in-this-chapter-list"/>
+                                        </fo:list-block>
+                                    </xsl:if>
+                                </fo:block>
+                            </fo:table-cell>
+                            <fo:table-cell xsl:use-attribute-sets="__toc__mini__summary">
+                                <!--Really, it would be better to just apply-templates, but the attribute sets for shortdesc, body
+                        and abstract might indent the text.  Here, the topic body is in a table cell, and should
+                        not be indented, so each element is handled specially.-->
+                                <fo:block>
+                                    <xsl:apply-templates select="*[contains(@class,' topic/titlealts ')]"/>
+                                    <xsl:if test="*[contains(@class,' topic/shortdesc ')
+                                        or contains(@class, ' topic/abstract ')]/node()">
+                                        <fo:block xsl:use-attribute-sets="p">
+                                            <xsl:apply-templates select="*[contains(@class,' topic/shortdesc ')
+                                                or contains(@class, ' topic/abstract ')]/node()"/>
+                                        </fo:block>
+                                    </xsl:if>
+                                    <xsl:apply-templates select="*[contains(@class,' topic/body ')]/*"/>
+                                    
+                                    <xsl:if test="*[contains(@class,' topic/related-links ')]//
+                                        *[contains(@class,' topic/link ')][not(@role) or @role!='child']">
+                                        <xsl:apply-templates select="*[contains(@class,' topic/related-links ')]"/>
+                                    </xsl:if>
+                                    
+                                </fo:block>
+                            </fo:table-cell>
+                        </fo:table-row>
+                    </fo:table-body>
+                </fo:table>
+            </xsl:when>
+            <xsl:otherwise>
+                <fo:block xsl:use-attribute-sets="pdf2.ug__toc__mini">
+                    <xsl:if test="*[contains(@class, ' topic/topic ')]">
+                        <fo:block xsl:use-attribute-sets="__toc__mini__header">
+                            <xsl:call-template name="getVariable">
+                                <xsl:with-param name="id" select="'Mini Toc'"/>
+                            </xsl:call-template>
+                        </fo:block>
+                        <fo:list-block xsl:use-attribute-sets="__toc__mini__list">
+                            <xsl:apply-templates select="*[contains(@class, ' topic/topic ')]" mode="in-this-chapter-list"/>
+                        </fo:list-block>
+                    </xsl:if>
+                </fo:block>
+                
+                <fo:block xsl:use-attribute-sets="pdf2.ug__toc__mini__summary">
+                    <xsl:apply-templates select="*[contains(@class,' topic/titlealts ')]"/>
+                    <xsl:if test="*[contains(@class,' topic/shortdesc ')
+                        or contains(@class, ' topic/abstract ')]/node()">
+                        <fo:block xsl:use-attribute-sets="p">
+                            <xsl:apply-templates select="*[contains(@class,' topic/shortdesc ')
+                                or contains(@class, ' topic/abstract ')]/node()"/>
+                        </fo:block>
+                    </xsl:if>
+                    <xsl:apply-templates select="*[contains(@class,' topic/body ')]/*"/>
+                    
+                    <xsl:if test="*[contains(@class,' topic/related-links ')]//
+                        *[contains(@class,' topic/link ')][not(@role) or @role!='child']">
+                        <xsl:apply-templates select="*[contains(@class,' topic/related-links ')]"/>
+                    </xsl:if>
+                    
+                </fo:block>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>
