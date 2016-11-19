@@ -7,6 +7,9 @@
     <xsl:import href="toc-attr.xsl"/>
     <xsl:import href="index-attr.xsl"/>
     
+    <xsl:import href="pdf2-ug-static-content-attr.xsl"/>
+    <xsl:import href="pdf2-ug-commons-attr.xsl"/>
+    
     <xsl:variable name="custom_blue_color">rgb(56,111,218)</xsl:variable>
   
   <!-- The default of 215.9mm x 279.4mm is US Letter size (8.5x11in) -->
