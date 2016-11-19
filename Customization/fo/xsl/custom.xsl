@@ -19,7 +19,6 @@
         Oxygen logo and product name 
     -->
   <xsl:template name="createFrontCoverContents">
-    <xsl:message>Current distribution is <xsl:value-of select="$oxy-ug-distribution"/></xsl:message>
     <fo:block 
       space-before="85mm" 
       space-before.conditionality="retain" 
