@@ -1,7 +1,12 @@
 <dummy>
-    <!-- Any Ant code allowed in xslt task is possible. Common example: -->
+    
     <param 
         name="oxy-ug-distribution" 
         expression="${oxy-ug-distribution}" 
         if="oxy-ug-distribution"/>
+    
+    <param name="pdf2.ug.chapter.header" 
+        expression="${pdf2.ug.chapter.header}" 
+        if="pdf2.ug.chapter.header">
+    </param>
 </dummy>
