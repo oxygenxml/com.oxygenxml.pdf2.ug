@@ -14,7 +14,7 @@
         chapter, appendix, notices. 
         
         The possible values are:
-        * title-and-chapter-number - Title aligned in the left part and chapter number in the right
+        * title-and-chapter - Title aligned in the left part and chapter number in the right
         * dita-ot-default - The default DITA-OT rendering
     -->
     <xsl:param name="pdf2.ug.chapter.header"/>
@@ -61,7 +61,7 @@
                         </xsl:when>
                         <xsl:otherwise>
                             <!--  
-                                title-and-chapter-number - Title aligned in the left part and chapter number in the right 
+                                title-and-chapter - Title aligned in the left part and chapter number in the right 
                             -->
                             <fo:block xsl:use-attribute-sets="pdf2.ug__chapter__frontmatter__number__container">
                                 <xsl:apply-templates select="key('map-id', @id)[1]" mode="topicTitleNumber"/>
