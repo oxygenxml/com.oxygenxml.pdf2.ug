@@ -74,4 +74,4 @@ cp gh-pages/index.html publishing/index.html
 echo "====================================="
 echo "List output file"
 echo "====================================="
-ls -la publishing/it-book
+ls -la publishing
