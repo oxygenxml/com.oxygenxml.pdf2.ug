@@ -34,12 +34,18 @@ echo "integrate plugins"
 echo "====================================="
 sh dita-ot-2.4/bin/dita --install
 
+echo "======================================="
+echo "Checkout DITA samples"
+echo "======================================="
+git clone https://github.com/radu-pisoi/dita-samples.git
+
 echo "====================================="
 echo "Transform to PDF the 'taskbook.ditamap' sample file"
 echo "====================================="
-sh dita-ot-2.4/bin/dita -i samples/it-book/taskbook.ditamap -f oxy-ug-pdf -output=samples/it-book/out-pdf -Doxy-ug-distribution=author
+sh dita-ot-2.4/bin/dita -i samples/it-book/taskbook.ditamap -f oxy-ug-pdf -output=publishing/it-book -Doxy-ug-distribution=author
 
+cp gh-pages/index.html publishing/index.html
 echo "====================================="
 echo "List output file"
 echo "====================================="
-ls -la samples/it-book/out-pdf
+ls -la publishing/it-book

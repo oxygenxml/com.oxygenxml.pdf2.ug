@@ -9,4 +9,8 @@
         expression="${pdf2.ug.chapter.header}" 
         if="pdf2.ug.chapter.header">
     </param>
+    
+    <param name="pdf2.ug.chapter.minitoc.layout" 
+        expression="${pdf2.ug.chapter.minitoc.layout}" 
+        if="pdf2.ug.chapter.minitoc.layout"/>
 </dummy>
