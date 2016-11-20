@@ -71,18 +71,31 @@
                     
                 </xsl:when>
                 <xsl:when test="$type = 'appendix'">
-                    <fo:block xsl:use-attribute-sets="__chapter__frontmatter__name__container">
-                        <xsl:call-template name="getVariable">
-                            <xsl:with-param name="id" select="'Appendix with number'"/>
-                            <xsl:with-param name="params">
-                                <number>
-                                    <fo:block xsl:use-attribute-sets="__chapter__frontmatter__number__container">
-                                        <xsl:apply-templates select="key('map-id', @id)[1]" mode="topicTitleNumber"/>
-                                    </fo:block>
-                                </number>
-                            </xsl:with-param>
-                        </xsl:call-template>
-                    </fo:block>
+                    <xsl:choose>
+                        <!-- Default DITA-OT processing -->
+                        <xsl:when test="$pdf2.ug.chapter.header eq 'dita-ot-default'">
+                            <fo:block xsl:use-attribute-sets="__chapter__frontmatter__name__container">
+                                <xsl:call-template name="getVariable">
+                                    <xsl:with-param name="id" select="'Appendix with number'"/>
+                                    <xsl:with-param name="params">
+                                        <number>
+                                            <fo:block xsl:use-attribute-sets="__chapter__frontmatter__number__container">
+                                                <xsl:apply-templates select="key('map-id', @id)[1]" mode="topicTitleNumber"/>
+                                            </fo:block>
+                                        </number>
+                                    </xsl:with-param>
+                                </xsl:call-template>
+                            </fo:block>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <!--  
+                                title-and-appendix-number - Title aligned in the left part and appendix number in the right 
+                            -->
+                            <fo:block xsl:use-attribute-sets="pdf2.ug__chapter__frontmatter__number__container">
+                                <xsl:apply-templates select="key('map-id', @id)[1]" mode="topicTitleNumber"/>
+                            </fo:block>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </xsl:when>
                 <xsl:when test="$type = 'appendices'">
                     <fo:block xsl:use-attribute-sets="__chapter__frontmatter__name__container">
@@ -370,5 +383,86 @@
                 </fo:block>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+    
+    <!--  Bookmap Appendix processing  -->
+    <xsl:template name="processTopicAppendix">
+        <fo:page-sequence master-reference="body-sequence" xsl:use-attribute-sets="page-sequence.appendix">
+            <xsl:call-template name="startPageNumbering"/>
+            <xsl:call-template name="insertBodyStaticContents"/>
+            <fo:flow flow-name="xsl-region-body">
+                <fo:block xsl:use-attribute-sets="topic">
+                    <xsl:call-template name="commonattributes"/>
+                    <xsl:variable name="level" as="xs:integer">
+                        <xsl:apply-templates select="." mode="get-topic-level"/>
+                    </xsl:variable>
+                    <xsl:if test="$level eq 1">
+                        <fo:marker marker-class-name="current-topic-number">
+                            <xsl:variable name="topicref" select="key('map-id', ancestor-or-self::*[contains(@class, ' topic/topic ')][1]/@id)"/>
+                            <xsl:for-each select="$topicref">
+                                <xsl:apply-templates select="." mode="topicTitleNumber"/>
+                            </xsl:for-each>
+                        </fo:marker>
+                        <xsl:apply-templates select="." mode="insertTopicHeaderMarker"/>
+                    </xsl:if>
+                    
+                    <xsl:apply-templates select="*[contains(@class,' topic/prolog ')]"/>
+                    <xsl:choose>
+                        <!-- The default DITA-OT processing -->
+                        <xsl:when test="$pdf2.ug.chapter.header eq 'dita-ot-default'">
+                            <xsl:apply-templates select="." mode="insertChapterFirstpageStaticContent">
+                                <xsl:with-param name="type" select="'appendix'"/>
+                            </xsl:apply-templates>
+                            
+                            <fo:block xsl:use-attribute-sets="topic.title">
+                                <xsl:call-template name="pullPrologIndexTerms"/>
+                                <xsl:for-each select="*[contains(@class,' topic/title ')]">
+                                    <xsl:apply-templates select="." mode="getTitle"/>
+                                </xsl:for-each>
+                            </fo:block>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <fo:table inline-progression-dimension="100%" 
+                                table-layout="fixed" xsl:use-attribute-sets="pdf2.ug.chapter.name.and.number"
+                                >
+                                <fo:table-column column-label="1" column-width="90%"/>
+                                <fo:table-column column-label="2" column-width="10%"/>
+                                <fo:table-body>
+                                    <fo:table-row>
+                                        <fo:table-cell display-align="center" text-align="left">
+                                            <fo:block xsl:use-attribute-sets="pdf2.ug.topic.title">
+                                                <xsl:call-template name="pullPrologIndexTerms"/>
+                                                <xsl:for-each select="*[contains(@class,' topic/title ')]">
+                                                    <xsl:apply-templates select="." mode="getTitle"/>
+                                                </xsl:for-each>
+                                            </fo:block>
+                                        </fo:table-cell>
+                                        <fo:table-cell display-align="center" text-align="right">
+                                            <xsl:apply-templates select="." mode="insertChapterFirstpageStaticContent">
+                                                <xsl:with-param name="type" select="'appendix'"/>
+                                            </xsl:apply-templates>
+                                        </fo:table-cell>
+                                    </fo:table-row>
+                                </fo:table-body>
+                            </fo:table>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    
+                    <xsl:choose>
+                        <xsl:when test="$appendixLayout='BASIC'">
+                            <xsl:apply-templates select="*[not(contains(@class, ' topic/topic ') or contains(@class, ' topic/title ') or
+                                contains(@class, ' topic/prolog '))]"/>
+                            <!--xsl:apply-templates select="." mode="buildRelationships"/-->
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates select="." mode="createMiniToc"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    
+                    <xsl:apply-templates select="*[contains(@class,' topic/topic ')]"/>
+                    <xsl:call-template name="pullPrologIndexTerms.end-range"/>
+                </fo:block>
+            </fo:flow>
+        </fo:page-sequence>
     </xsl:template>
 </xsl:stylesheet>
