@@ -30,5 +30,12 @@
         <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
         <xsl:attribute name="color" select="$custom_blue_color"/>
     </xsl:attribute-set>
+    
+    <!-- 
+        FO attributes for chapter name.
+    -->
+    <xsl:attribute-set name="pdf2.ug.common.border__bottom" use-attribute-sets="common.border__bottom">
+        <xsl:attribute name="border-after-color" select="$custom_blue_color"/>
+    </xsl:attribute-set>
 
 </xsl:stylesheet>

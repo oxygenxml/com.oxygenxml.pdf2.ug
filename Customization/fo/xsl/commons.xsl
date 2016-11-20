@@ -212,6 +212,83 @@
         </fo:page-sequence>
     </xsl:template>
     
+    <!-- Process bookmap notices -->
+    <xsl:template name="processTopicNotices">
+        <xsl:variable name="atts" as="element()">
+            <xsl:choose>
+                <xsl:when test="key('map-id', ancestor-or-self::*[contains(@class, ' topic/topic ')][1]/@id)/ancestor::*[contains(@class,' bookmap/backmatter ')]">
+                    <dummy xsl:use-attribute-sets="page-sequence.backmatter.notice"/> 
+                </xsl:when>
+                <xsl:otherwise>
+                    <dummy xsl:use-attribute-sets="page-sequence.notice"/> 
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <fo:page-sequence master-reference="body-sequence">
+            <xsl:copy-of select="$atts/@*"/>
+            <xsl:call-template name="startPageNumbering"/>
+            <xsl:call-template name="insertPrefaceStaticContents"/>
+            <fo:flow flow-name="xsl-region-body">
+                <fo:block xsl:use-attribute-sets="topic">
+                    <xsl:call-template name="commonattributes"/>
+                    <xsl:if test="empty(ancestor::*[contains(@class, ' topic/topic ')])">
+                        <fo:marker marker-class-name="current-topic-number">
+                            <xsl:variable name="topicref" select="key('map-id', ancestor-or-self::*[contains(@class, ' topic/topic ')][1]/@id)"/>
+                            <xsl:for-each select="$topicref">
+                                <xsl:apply-templates select="." mode="topicTitleNumber"/>
+                            </xsl:for-each>
+                        </fo:marker>
+                        <xsl:apply-templates select="." mode="insertTopicHeaderMarker"/>
+                    </xsl:if>
+                    
+                    <xsl:apply-templates select="*[contains(@class,' topic/prolog ')]"/>
+                    
+                    <!-- The default DITA-OT processing -->
+                    <xsl:choose>
+                        <xsl:when test="$pdf2.ug.chapter.header eq 'dita-ot-default'">
+                            <xsl:apply-templates select="." mode="insertChapterFirstpageStaticContent">
+                                <xsl:with-param name="type" select="'notices'"/>
+                            </xsl:apply-templates>
+                        </xsl:when>
+                    </xsl:choose>
+                    
+                    <xsl:choose>
+                        <xsl:when test="$pdf2.ug.chapter.header eq 'dita-ot-default'">
+                            <fo:block xsl:use-attribute-sets="topic.title">
+                                <xsl:call-template name="pullPrologIndexTerms"/>
+                                <xsl:for-each select="*[contains(@class,' topic/title ')]">
+                                    <xsl:apply-templates select="." mode="getTitle"/>
+                                </xsl:for-each>
+                            </fo:block>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <fo:block xsl:use-attribute-sets="pdf2.ug.topic.title pdf2.ug.chapter.name.and.number">
+                                <xsl:call-template name="pullPrologIndexTerms"/>
+                                <xsl:for-each select="*[contains(@class,' topic/title ')]">
+                                    <xsl:apply-templates select="." mode="getTitle"/>
+                                </xsl:for-each>
+                            </fo:block>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <xsl:choose>
+                        <xsl:when test="$noticesLayout='BASIC'">
+                            <xsl:apply-templates select="*[not(contains(@class, ' topic/topic ') or contains(@class, ' topic/title ') or
+                                contains(@class, ' topic/prolog '))]"/>
+                            <!--xsl:apply-templates select="." mode="buildRelationships"/-->
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates select="." mode="createMiniToc"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    
+                    <xsl:apply-templates select="*[contains(@class,' topic/topic ')]"/>
+                    <xsl:call-template name="pullPrologIndexTerms.end-range"/>
+                </fo:block>
+            </fo:flow>
+        </fo:page-sequence>
+    </xsl:template>
+    
     <xsl:template match="*" mode="createMiniToc">
         <xsl:choose>
             <xsl:when test="$pdf2.ug.chapter.minitoc.layout eq 'dita-ot-default'">
