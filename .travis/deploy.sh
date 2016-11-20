@@ -10,13 +10,13 @@ fi
 
 rev=$(git rev-parse --short HEAD)
 
-cd samples/it-book/out-pdf
+cd publishing
 
 git init
 git config user.name "Radu Pisoi"
 git config user.email "radupisoi23@gmail.com"
 
-git remote add upstream "https://$GH_TOKEN@github.com/radu-pisoi/pdf2.ug.test.git"
+git remote add upstream "https://$GH_TOKEN@github.com/radu-pisoi/com.oxygenxml.pdf2.ug.git"
 git fetch upstream
 git reset upstream/gh-pages
 
