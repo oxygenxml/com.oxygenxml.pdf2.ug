@@ -50,9 +50,9 @@ echo "====================================="
 sh dita-ot-2.4/bin/dita -i samples/it-book/taskbook.ditamap -f oxy-ug-pdf -output=publishing/it-book -Doxy-ug-distribution=author
 
 echo "======================================="
-echo "Checkout oXygev User Manual development branch"
+echo "Checkout oXygev User Manual"
 echo "======================================="
-git clone https://github.com/oxygenxml/userguide-private.git oXygen-ug
+git clone https://github.com/oxygenxml/userguide.git oXygen-ug
 
 echo "====================================="
 echo "Transform the oXygen user manual to PDF, editor distribution"
