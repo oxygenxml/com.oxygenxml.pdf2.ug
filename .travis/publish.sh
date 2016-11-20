@@ -58,7 +58,10 @@ ls oXygen-ug
 echo "====================================="
 echo "Transform the oXygen user manual to PDF, editor distribution"
 echo "====================================="
-sh dita-ot-2.4/bin/dita -i oXygen-ug/DITA/UserManual.ditamap -f oxy-ug-pdf --filter=oXygen-ug/DITA/editor.ditaval -output=publishing/oXygen-ug/editor -DXmx1524M -Doxy-ug-distribution=editor
+
+export ANT_ARGS=-Xmx1524m
+sh dita-ot-2.4/bin/dita -i oXygen-ug/DITA/UserManual.ditamap -f oxy-ug-pdf --filter=oXygen-ug/DITA/editor.ditaval -output=publishing/oXygen-ug/editor -Doxy-ug-distribution=editor
+
 
 # echo "====================================="
 #echo "Transform the oXygen user manual to PDF, author distribution"
