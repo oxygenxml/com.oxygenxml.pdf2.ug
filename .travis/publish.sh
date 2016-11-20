@@ -75,3 +75,4 @@ echo "====================================="
 echo "List output file"
 echo "====================================="
 ls -la publishing
+ls -la publishing/oXygen-ug/editor
