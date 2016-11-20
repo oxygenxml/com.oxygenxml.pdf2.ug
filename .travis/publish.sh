@@ -37,7 +37,12 @@ sh dita-ot-2.4/bin/dita --install
 echo "======================================="
 echo "Checkout DITA samples"
 echo "======================================="
-git clone https://github.com/radu-pisoi/dita-samples.git
+git clone https://github.com/radu-pisoi/dita-samples.git samples
+
+echo "======================================="
+echo "List DITA samples"
+echo "======================================="
+ls -la samples
 
 echo "====================================="
 echo "Transform to PDF the 'taskbook.ditamap' sample file"
