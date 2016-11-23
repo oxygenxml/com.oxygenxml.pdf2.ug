@@ -15,7 +15,7 @@ Project organization:
 
 See more details about DITA-PT PDF2 plugin here http://www.dita-ot.org/2.4/dev_ref/pdf-customization.html.
 
-You can use this PDF2 customization plugin please following the next steps:
+To use this PDF2 customization plugin please follow the next steps:
 
 1. Download **DITA-OT 2.4** 
 2. Copy this customization plugin into the **DITA-OT/plugins** folder
