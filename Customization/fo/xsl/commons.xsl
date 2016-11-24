@@ -143,7 +143,9 @@
         </fo:block>
     </xsl:template>
     
-    <!--  Bookmap Chapter processing  -->
+    <!--  
+        Bookmap Chapter processing  
+    -->
     <xsl:template name="processTopicChapter">
         <fo:page-sequence master-reference="body-sequence" xsl:use-attribute-sets="page-sequence.body">
             <xsl:call-template name="startPageNumbering"/>
