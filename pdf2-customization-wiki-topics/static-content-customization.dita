@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="topic_pqy_3h2_cy">
+  <title>Headers and footers customization</title>
+  <body>
+    <p></p>
+    <ul id="ul_xvx_smf_cy">
+      <li><p>About the page numbering we want to use two different styles. In the first part of the
+          user manual that includes the TOC, we want to use roman digits and after that we want to
+          reset page numbering and use the arabic digits.</p>Reset page numbering at first
+        chapter</li>
+    </ul>
+  </body>
+</topic>
