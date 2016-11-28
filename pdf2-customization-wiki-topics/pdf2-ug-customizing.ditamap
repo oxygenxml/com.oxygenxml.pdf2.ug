@@ -6,4 +6,8 @@
     </booktitle>
     <chapter href="chapter_first_page.dita"/>
     <chapter href="cover-customization.dita"/>
+    <chapter href="static-content-customization.dita"/>
+    <chapter href="toc-customization.dita"/>
+    <chapter href="index-customization.dita"/>
+    <chapter href="font-customization.dita"/>
 </bookmap>
