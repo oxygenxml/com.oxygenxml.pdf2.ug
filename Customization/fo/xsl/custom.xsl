@@ -3,7 +3,7 @@
   xmlns:fo="http://www.w3.org/1999/XSL/Format" 
   xmlns:opentopic-func="http://www.idiominc.com/opentopic/exsl/function"
   xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder" version="2.0">
-  
+  <!-- Front cover -->
   <xsl:import href="front-matter.xsl"/>
   <xsl:import href="static-content.xsl"/>
   <xsl:import href="layout-masters.xsl"/>
@@ -22,21 +22,6 @@
   <!-- This is the default, but you can set the margins individually below. -->
   <xsl:variable name="page-margins">15mm</xsl:variable>
  
-  <xsl:template name="startPageNumbering" as="attribute()*">
-    <!--BS: uncomment if you need reset page numbering at first chapter-->
-    <xsl:variable name="id" select="ancestor-or-self::*[contains(@class, ' topic/topic ')][1]/@id"/>
-    <xsl:variable name="mapTopic" select="key('map-id', $id)"/>
-    <xsl:variable name="firstAncestorChapter"
-      select="$mapTopic/ancestor-or-self::*[contains(@class, ' bookmap/chapter ')]"/>
-    <xsl:if
-      test="
-        exists($firstAncestorChapter) and
-        not($firstAncestorChapter/preceding::*[contains(@class, ' bookmap/chapter ')])">
-      
-      <xsl:attribute name="initial-page-number">1</xsl:attribute>
-    </xsl:if>
-  </xsl:template>
-  
   <!--
     Add a small space after and before the inline images.
   -->

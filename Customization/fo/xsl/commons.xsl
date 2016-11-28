@@ -515,4 +515,21 @@
             </fo:flow>
         </fo:page-sequence>
     </xsl:template>
+    
+    <!-- 
+        Reset page numbering at first chapter.
+    -->
+    <xsl:template name="startPageNumbering" as="attribute()*">
+        <xsl:variable name="id" select="ancestor-or-self::*[contains(@class, ' topic/topic ')][1]/@id"/>
+        <xsl:variable name="mapTopic" select="key('map-id', $id)"/>
+        <xsl:variable name="firstAncestorChapter"
+            select="$mapTopic/ancestor-or-self::*[contains(@class, ' bookmap/chapter ')]"/>
+        <xsl:if
+            test="
+            exists($firstAncestorChapter) and
+            not($firstAncestorChapter/preceding::*[contains(@class, ' bookmap/chapter ')])">
+            
+            <xsl:attribute name="initial-page-number">1</xsl:attribute>
+        </xsl:if>
+    </xsl:template>
 </xsl:stylesheet>
