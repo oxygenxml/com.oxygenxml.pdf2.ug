@@ -5,7 +5,7 @@ It was tested with **DITA-OT 2.4**. Also, please note that this customization wa
 
 Project organization:
 
-- **Customization** - This folder keeps the XSLT customization stylesheets, XML catalog and font font configuration;
+- **Customization** - This folder keeps the XSLT customization stylesheets, XML catalog and font configuration;
 - **fonts** - Contains the resources for the **Roboto** font;
 - **lib** - some additional libraries needed to load SVG images
 - **plugin.xml** - plugin descriptor file
