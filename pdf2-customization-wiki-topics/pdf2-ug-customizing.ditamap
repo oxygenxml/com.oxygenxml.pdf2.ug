@@ -5,4 +5,5 @@
         <mainbooktitle> DITA-OT PDF2 Customization Plugin for oXygen User Guide</mainbooktitle>
     </booktitle>
     <chapter href="chapter_first_page.dita"/>
+    <chapter href="cover-customization.dita"/>
 </bookmap>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cover-customization">
+  <title>Cover customization</title>
+  <body>
+    <p>Cover customizations is probably the first customization that you might want to do...</p>
+    <p>Resources:</p>
+    <p>* plugins/com.oxygenxml.pdf2.ug/Customization/fo/xsl/front-matter.xsl - Override the default
+      customization to generate a table with one row with two cells. On the left part will be placed
+      the product's logo and in the right part is placed the product's title.</p>
+  </body>
+</topic>
