@@ -83,7 +83,6 @@
     
     <!-- Added for customize the front cover -->
     <xsl:attribute-set name="region-body__frontmatter.odd">        
-        <!--<xsl:attribute name="background-color"><xsl:value-of select="$custom_blue_color"/></xsl:attribute>-->
         <xsl:attribute name="background-image">
             <xsl:choose>
                 <xsl:when test="$oxy-ug-distribution eq 'author'">url(<xsl:value-of select="concat($artworkPrefix, '/Customization/OpenTopic/common/artwork/author_cover_background.svg')"/>)</xsl:when>
