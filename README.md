@@ -1,12 +1,11 @@
-# DITA-OT PDF2 Customization Plugin for oXygen User Guide 
+# DITA-OT PDF2 Customization Plugin for oXygen User Manual 
 
-This project represents a DITA-OT PFD2 customization plugin used 
-to generate the oXygen user manual in the PDF format. 
+This project represents a DITA-OT PFD2 customization plugin used to generate the user manual for oXygen XML Editor in the PDF format. 
 It was tested with **DITA-OT 2.4**. Also, please note that this customization wast tested only with DITA bookmaps.
 
 Project organization:
 
-- **Customization** - This folder keeps the XSLT customization stylesheets, XML catalog and font font configuration;
+- **Customization** - This folder keeps the XSLT customization stylesheets, XML catalog and font configuration;
 - **fonts** - Contains the resources for the **Roboto** font;
 - **lib** - some additional libraries needed to load SVG images
 - **plugin.xml** - plugin descriptor file
