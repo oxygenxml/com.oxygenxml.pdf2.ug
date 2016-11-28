@@ -2,8 +2,9 @@
 <plugin id="com.oxygenxml.pdf2.ug">
     <require plugin="org.dita.pdf2"/>
     <require plugin="org.dita.pdf2.fop"/>
-    
-    <feature extension="dita.conductor.pdf2.param" file="pdf2ExtensionParameters.xml"/>        
+    <!-- Add additional parameters -->
+    <feature extension="dita.conductor.pdf2.param" file="pdf2ExtensionParameters.xml"/> 
+    <!-- Additional library to load SVG files -->
     <feature extension="dita.conductor.lib.import" file="lib/xml-apis-ext.jar"/>
     
     <feature extension="dita.conductor.transtype.check" value="oxy-ug-pdf"/>
