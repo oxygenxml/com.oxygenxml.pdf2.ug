@@ -1,7 +1,10 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:fo="http://www.w3.org/1999/XSL/Format"
     version="2.0">
-
+    
+    <!--
+        Blue color for chapters.
+    -->
     <xsl:attribute-set name="__toc__topic__content">
         <xsl:attribute name="color">
             <xsl:variable name="level" select="count(ancestor-or-self::*[contains(@class, ' topic/topic ')])"/>
