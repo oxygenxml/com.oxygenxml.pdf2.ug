@@ -1,7 +1,10 @@
 # DITA-OT PDF2 Customization Plugin for oXygen User Manual 
 
 This project represents a DITA-OT PFD2 customization plugin used to generate the user manual for oXygen XML Editor in the PDF format. 
-It was tested with **DITA-OT 2.4**. Also, please note that this customization wast tested only with DITA bookmaps.
+It was tested with **DITA-OT 2.4**. Also, please note that this customization was tested only with DITA bookmaps.
+
+You can view the result of this customization by opening the oXygen user manul in the PDF format from the next address: 
+[com.oxygenxml.pdf2.ug/blob/gh-pages/oXygen-ug/editor/UserManual.pdf](https://github.com/radu-pisoi/com.oxygenxml.pdf2.ug/blob/gh-pages/oXygen-ug/editor/UserManual.pdf).
 
 Project organization:
 
