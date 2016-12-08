@@ -7,8 +7,8 @@
     <xsl:import href="toc-attr.xsl"/>
     <xsl:import href="index-attr.xsl"/>
 
-    <xsl:import href="pdf2-ug-static-content-attr.xsl"/>
-    <xsl:import href="pdf2-ug-commons-attr.xsl"/>
+    <xsl:import href="static-content-attr.xsl"/>
+    <xsl:import href="commons-attr.xsl"/>
 
     <!-- Custom blue color used in chapter's first page, TOC, appendix -->
     <xsl:variable name="custom_blue_color">rgb(56,111,218)</xsl:variable>
