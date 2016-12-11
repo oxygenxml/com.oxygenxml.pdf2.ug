@@ -6,9 +6,11 @@
     </booktitle>
     <chapter href="pdf2_plugin_short_introduction.md" format="markdown"/>
     <chapter href="develop_pdf2_plugin.md" format="markdown"/>
+    <chapter href="oXygen_developing_pdf_plugin.md" format="markdown"/>
     <chapter href="font-customization.md" format="markdown"/>
     <chapter href="cover-page.md" format="markdown"/>
     <chapter href="headers-footers.md" format="markdown"/>
     <chapter href="ch_first_page.md" format="markdown"/>
     <chapter href="toc_index_customization.md" format="markdown"/>
+    <chapter href="travis_ci.md" format="markdown"/>
 </bookmap>
