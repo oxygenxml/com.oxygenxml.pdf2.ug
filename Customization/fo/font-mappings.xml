@@ -49,11 +49,7 @@ See the accompanying license.txt file for applicable licenses.
     </aliases>
     <aliases>
       <alias name="Courier">Monospaced</alias>
-    </aliases>
-    
-    <!--<aliases>
-      <alias name="roboto-light">Roboto-Light</alias>
-    </aliases>-->
+    </aliases>    
     
     <logical-font name="Sans">
       <physical-font char-set="default">

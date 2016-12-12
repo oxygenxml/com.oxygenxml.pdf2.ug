@@ -4,10 +4,13 @@
     <booktitle>
         <mainbooktitle> DITA-OT PDF2 Customization Plugin for oXygen User Guide</mainbooktitle>
     </booktitle>
-    <chapter href="font-customization.dita"/>
-    <chapter href="cover-customization.dita"/>
-    <chapter href="static-content-customization.dita"/>
-    <chapter href="toc-customization.dita"/>
-    <chapter href="chapter_first_page.dita"/>
-    <chapter href="index-customization.dita"/>
+    <chapter href="pdf2_plugin_short_introduction.md" format="markdown"/>
+    <chapter href="develop_pdf2_plugin.md" format="markdown"/>
+    <chapter href="oXygen_developing_pdf_plugin.md" format="markdown"/>
+    <chapter href="font-customization.md" format="markdown"/>
+    <chapter href="cover-page.md" format="markdown"/>
+    <chapter href="headers-footers.md" format="markdown"/>
+    <chapter href="ch_first_page.md" format="markdown"/>
+    <chapter href="toc_index_customization.md" format="markdown"/>
+    <chapter href="travis_ci.md" format="markdown"/>
 </bookmap>
