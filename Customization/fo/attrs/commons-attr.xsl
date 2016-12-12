@@ -38,4 +38,12 @@
         <xsl:attribute name="border-after-color" select="$custom_blue_color"/>
     </xsl:attribute-set>
 
+    <!--
+        Set the 'force-page-count' attribute to auto. 
+        We don't want to impose that chapters to start on odd page
+    -->
+    <xsl:attribute-set name="__force__page__count">
+        <xsl:attribute name="force-page-count">auto</xsl:attribute>
+    </xsl:attribute-set>
+
 </xsl:stylesheet>
