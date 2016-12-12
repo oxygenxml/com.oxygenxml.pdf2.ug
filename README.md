@@ -7,6 +7,8 @@ This project uses [Travis CI](https://travis-ci.org/) for continuous integration
 * [oXygen XML Author User Manual](https://github.com/radu-pisoi/com.oxygenxml.pdf2.ug/blob/gh-pages/oXygen-ug/author/UserManual.pdf)
 * [oXygen XML Developer User Manual](https://github.com/radu-pisoi/com.oxygenxml.pdf2.ug/blob/gh-pages/oXygen-ug/developer/UserManual.pdf)
 
+All the customizations covered by this plugin are described in details using the [GitHub Wiki pages](https://github.com/radu-pisoi/com.oxygenxml.pdf2.ug/wiki).
+
 Project organization:
 
 - **Customization** - This folder keeps the XSLT customization stylesheets, XML catalog and font configuration;
