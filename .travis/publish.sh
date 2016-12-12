@@ -39,11 +39,6 @@ echo "Checkout DITA samples"
 echo "======================================="
 git clone https://github.com/radu-pisoi/dita-samples.git samples
 
-echo "======================================="
-echo "List DITA samples"
-echo "======================================="
-ls -la samples
-
 echo "====================================="
 echo "Transform to PDF the 'taskbook.ditamap' sample file"
 echo "====================================="
@@ -62,16 +57,15 @@ echo "====================================="
 export ANT_OPTS=-Xmx1524m
 sh dita-ot-2.4/bin/dita -i oXygen-ug/DITA/UserManual.ditamap -f oxy-ug-pdf --filter=oXygen-ug/DITA/editor.ditaval -output=publishing/oXygen-ug/editor -Doxy-ug-distribution=editor
 
+echo "====================================="
+echo "Transform the oXygen user manual to PDF, author distribution"
+echo "====================================="
+sh dita-ot-2.4/bin/dita -i oXygen-ug/DITA/UserManual.ditamap -f oxy-ug-pdf --filter=oXygen-ug/DITA/author.ditaval -output=publishing/oXygen-ug/author -Doxy-ug-distribution=author
 
-# echo "====================================="
-#echo "Transform the oXygen user manual to PDF, author distribution"
-#echo "====================================="
-# sh dita-ot-2.4/bin/dita -i oXygen-ug/DITA/UserManual.ditamap -f oxy-ug-pdf -output=publishing/oXygen-ug/author --filter=oXygen-ug/DITA/author.ditaval -Doxy-ug-distribution=author
-
-#echo "====================================="
-#echo "Transform the oXygen user manual to PDF, developer distribution"
-#echo "====================================="
-#sh dita-ot-2.4/bin/dita -i oXygen-ug/DITA/UserManual.ditamap -f oxy-ug-pdf --filter=oXygen-ug/DITA/developer.ditaval -output=publishing/oXygen-ug/developer -Doxy-ug-distribution=developer
+echo "====================================="
+echo "Transform the oXygen user manual to PDF, developer distribution"
+echo "====================================="
+sh dita-ot-2.4/bin/dita -i oXygen-ug/DITA/UserManual.ditamap -f oxy-ug-pdf --filter=oXygen-ug/DITA/developer.ditaval -output=publishing/oXygen-ug/developer -Doxy-ug-distribution=developer
 
 cp gh-pages/index.html publishing/index.html
 echo "====================================="
