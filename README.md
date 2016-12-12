@@ -1,10 +1,13 @@
 # DITA-OT PDF2 Customization Plugin for oXygen User Manual 
 
-This project represents a DITA-OT PFD2 customization plugin used to generate the user manual for oXygen XML Editor in the PDF format. 
-It was tested with **DITA-OT 2.4**. Also, please note that this customization was tested only with DITA bookmaps.
+This project represents a **DITA-OT PFD2** customization plugin used to generate the user manual for oXygen XML Editor in the PDF format. It was tested with **DITA-OT 2.4** processor.
 
-You can view the result of this customization by opening the oXygen user manul in the PDF format from the next address: 
-[com.oxygenxml.pdf2.ug/blob/gh-pages/oXygen-ug/editor/UserManual.pdf](https://github.com/radu-pisoi/com.oxygenxml.pdf2.ug/blob/gh-pages/oXygen-ug/editor/UserManual.pdf).
+This project uses [Travis CI](https://travis-ci.org/) for continuous integration, so a PDF sample is generated whenever the customization was changed. You can view the result of this customization by opening the last generated PDFs:
+* [oXygen XML Editor User Manual](https://github.com/radu-pisoi/com.oxygenxml.pdf2.ug/blob/gh-pages/oXygen-ug/editor/UserManual.pdf)
+* [oXygen XML Author User Manual](https://github.com/radu-pisoi/com.oxygenxml.pdf2.ug/blob/gh-pages/oXygen-ug/author/UserManual.pdf)
+* [oXygen XML Developer User Manual](https://github.com/radu-pisoi/com.oxygenxml.pdf2.ug/blob/gh-pages/oXygen-ug/developer/UserManual.pdf)
+
+All the customizations covered by this plugin are described in details using the [GitHub Wiki pages](https://github.com/radu-pisoi/com.oxygenxml.pdf2.ug/wiki).
 
 Project organization:
 
@@ -15,7 +18,6 @@ Project organization:
 - **build.xml, integrator.xml** - plugin build files
 - **fop.xconf** - the configuration file for Apache FOP 
 
-See more details about DITA-PT PDF2 plugin here http://www.dita-ot.org/2.4/dev_ref/pdf-customization.html.
 
 To use this PDF2 customization plugin please follow the next steps:
 
