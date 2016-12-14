@@ -1,4 +1,4 @@
-# DITA-OT PDF2 Customization Plugin for oXygen User Manual 
+# DITA-OT PDF Customization Plugin for oXygen User Manual 
 
 This project represents a **DITA-OT PFD2** customization plugin used to generate the user manual for oXygen XML Editor in the PDF format. It was tested with **DITA-OT 2.4** processor.
 
@@ -19,7 +19,7 @@ Project organization:
 - **fop.xconf** - the configuration file for Apache FOP 
 
 
-To use this PDF2 customization plugin please follow the next steps:
+To use this PDF customization plugin please follow the next steps:
 
 1. Download **DITA-OT 2.4** 
 2. Copy this customization plugin into the **DITA-OT/plugins** folder
