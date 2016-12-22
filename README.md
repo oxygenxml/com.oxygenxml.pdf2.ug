@@ -27,3 +27,5 @@ To use this PDF customization plugin, follow these steps:
 4. Invoke the PDF transformation using the **oxy-ug-pdf** transtype in a command, as in the following example:
 
 dita.bat -i file:/D:/workspace/userguide-private/DITA/UserManual.ditamap -f oxy-ug-pdf -output=D:/workspace/userguide-private/DITA/out-pdf --filter=D:/workspace/userguide-private/DITA/author.ditaval -Doxy-ug-distribution=author
+
+This project is licensed under the Apache License 2.0. For details, see the LICENSE file at the top of this repository.
