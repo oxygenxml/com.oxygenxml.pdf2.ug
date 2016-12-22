@@ -28,4 +28,4 @@ To use this PDF customization plugin, follow these steps:
 
 dita.bat -i file:/D:/workspace/userguide-private/DITA/UserManual.ditamap -f oxy-ug-pdf -output=D:/workspace/userguide-private/DITA/out-pdf --filter=D:/workspace/userguide-private/DITA/author.ditaval -Doxy-ug-distribution=author
 
-This project is licensed under the Apache License 2.0. For details, see the LICENSE file at the top of this repository.
+This project is licensed under the Apache License 2.0. For details, see the [LICENSE](https://github.com/oxygenxml/com.oxygenxml.pdf2.ug/blob/master/LICENSE) file at the top of this repository.
