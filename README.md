@@ -22,8 +22,8 @@ Project organization:
 To use this PDF customization plugin, follow these steps:
 
 1. Download **DITA-OT 2.4** 
-2. Copy the root folder of this customization plugin to the **DITA-OT/plugins** folder
-3. Run the **DITA-OT Integrator** (ant -f integrator.xml)
+2. Download the ZIP archive associated with this project by using the ``Clone or download`` button.
+3. Install the plugin by running the command ``dita-ot-dir/bin/dita --install=plug-in-zip``. See more details in the [Installing plug-ins](http://www.dita-ot.org/2.4/dev_ref/plugins-installing.html) topic from the DITA-OT documentation.
 4. Invoke the PDF transformation using the **oxy-ug-pdf** transtype in a command, as in the following example:
 
 dita.bat -i file:/D:/workspace/userguide-private/DITA/UserManual.ditamap -f oxy-ug-pdf -output=D:/workspace/userguide-private/DITA/out-pdf --filter=D:/workspace/userguide-private/DITA/author.ditaval -Doxy-ug-distribution=author
