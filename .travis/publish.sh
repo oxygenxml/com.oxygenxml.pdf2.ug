@@ -38,7 +38,7 @@ echo "======================================="
 echo "Checkout oXygev User Manual"
 echo "======================================="
 git clone https://github.com/oxygenxml/userguide.git oXygen-ug
-ls oXygen-ug
+ls -la oXygen-ug/DITA/
 
 echo "====================================="
 echo "Transform the oXygen user manual to PDF, editor distribution"
