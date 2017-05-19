@@ -3,11 +3,11 @@
 This project represents a **DITA-OT PFD** customization plugin used to generate the user manual for oXygen XML Editor in the PDF format. It was tested with the **DITA-OT 2.4** processor.
 
 This project uses [Travis CI](https://travis-ci.org/) for continuous integration, so a PDF sample is generated whenever the customization is modified. You can view the results of this customization by opening one of the following recently generated PDFs:
-* [oXygen XML Editor User Manual](https://github.com/radu-pisoi/com.oxygenxml.pdf2.ug/blob/gh-pages/oXygen-ug/editor/UserManual.pdf)
-* [oXygen XML Author User Manual](https://github.com/radu-pisoi/com.oxygenxml.pdf2.ug/blob/gh-pages/oXygen-ug/author/UserManual.pdf)
-* [oXygen XML Developer User Manual](https://github.com/radu-pisoi/com.oxygenxml.pdf2.ug/blob/gh-pages/oXygen-ug/developer/UserManual.pdf)
+* [oXygen XML Editor User Manual](https://github.com/oxygenxml/com.oxygenxml.pdf2.ug/blob/gh-pages/oXygen-ug/editor/UserManual.pdf)
+* [oXygen XML Author User Manual](https://github.com/oxygenxml/com.oxygenxml.pdf2.ug/blob/gh-pages/oXygen-ug/author/UserManual.pdf)
+* [oXygen XML Developer User Manual](https://github.com/oxygenxml/com.oxygenxml.pdf2.ug/blob/gh-pages/oXygen-ug/developer/UserManual.pdf)
 
-All the customizations that are allowed by this plugin are described in detail in its [GitHub Wiki pages](https://github.com/radu-pisoi/com.oxygenxml.pdf2.ug/wiki).
+All the customizations that are allowed by this plugin are described in detail in its [GitHub Wiki pages](https://github.com/oxygenxml/com.oxygenxml.pdf2.ug/wiki).
 
 Project organization:
 
