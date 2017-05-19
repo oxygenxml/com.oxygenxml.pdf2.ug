@@ -13,10 +13,10 @@ rev=$(git rev-parse --short HEAD)
 cd publishing
 
 git init
-git config user.name "Radu Pisoi"
-git config user.email "radupisoi23@gmail.com"
+git config user.name "oXygen XML Deployer"
+git config user.email "support@oxygenxml.com"
 
-git remote add upstream "https://$GH_TOKEN@github.com/radu-pisoi/com.oxygenxml.pdf2.ug.git"
+git remote add upstream "https://$GH_TOKEN@github.com/oxygenxml/com.oxygenxml.pdf2.ug.git"
 git fetch upstream
 git reset upstream/gh-pages
 
