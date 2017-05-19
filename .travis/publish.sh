@@ -12,7 +12,7 @@ wget https://github.com/dita-ot/dita-ot/releases/download/2.4/dita-ot-2.4.zip
 echo "====================================="
 echo "extract DITA-OT"
 echo "====================================="
-unzip dita-ot-2.4.zip
+unzip dita-ot-2.4.zip >/dev/null
 
 echo "===================================================="
 echo "Copy PDF customization plugin to DITA-OT/plugins"
