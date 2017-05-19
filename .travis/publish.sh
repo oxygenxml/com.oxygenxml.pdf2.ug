@@ -35,16 +35,6 @@ echo "====================================="
 sh dita-ot-2.4/bin/dita --install
 
 echo "======================================="
-echo "Checkout DITA samples"
-echo "======================================="
-git clone https://github.com/radu-pisoi/dita-samples.git samples
-
-echo "====================================="
-echo "Transform to PDF the 'taskbook.ditamap' sample file"
-echo "====================================="
-sh dita-ot-2.4/bin/dita -i samples/it-book/taskbook.ditamap -f oxy-ug-pdf -output=publishing/it-book -Doxy-ug-distribution=author
-
-echo "======================================="
 echo "Checkout oXygev User Manual"
 echo "======================================="
 git clone https://github.com/oxygenxml/userguide.git oXygen-ug
