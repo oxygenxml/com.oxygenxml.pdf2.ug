@@ -35,7 +35,7 @@ echo "====================================="
 sh dita-ot-2.4/bin/dita --install
 
 echo "======================================="
-echo "Checkout oXygev User Manual"
+echo "Checkout oXygen User Manual"
 echo "======================================="
 git clone https://github.com/oxygenxml/userguide.git oXygen-ug
 ls -la oXygen-ug/DITA/
@@ -45,17 +45,17 @@ echo "Transform the oXygen user manual to PDF, editor distribution"
 echo "====================================="
 
 export ANT_OPTS=-Xmx1524m
-sh dita-ot-2.4/bin/dita -i oXygen-ug/DITA/UserManual.ditamap -f oxy-ug-pdf --filter=oXygen-ug/DITA/editor.ditaval -output=publishing/oXygen-ug/editor -Doxy-ug-distribution=editor
+sh dita-ot-2.4/bin/dita -i oXygen-ug/DITA/UserManual.ditamap -f oxy-ug-pdf --filter=oXygen-ug/DITA/ditaval/editor.ditaval -output=publishing/oXygen-ug/editor -Doxy-ug-distribution=editor
 
 echo "====================================="
 echo "Transform the oXygen user manual to PDF, author distribution"
 echo "====================================="
-sh dita-ot-2.4/bin/dita -i oXygen-ug/DITA/UserManual.ditamap -f oxy-ug-pdf --filter=oXygen-ug/DITA/author.ditaval -output=publishing/oXygen-ug/author -Doxy-ug-distribution=author
+sh dita-ot-2.4/bin/dita -i oXygen-ug/DITA/UserManual.ditamap -f oxy-ug-pdf --filter=oXygen-ug/DITA/ditaval/author.ditaval -output=publishing/oXygen-ug/author -Doxy-ug-distribution=author
 
 echo "====================================="
 echo "Transform the oXygen user manual to PDF, developer distribution"
 echo "====================================="
-sh dita-ot-2.4/bin/dita -i oXygen-ug/DITA/UserManual.ditamap -f oxy-ug-pdf --filter=oXygen-ug/DITA/developer.ditaval -output=publishing/oXygen-ug/developer -Doxy-ug-distribution=developer
+sh dita-ot-2.4/bin/dita -i oXygen-ug/DITA/UserManual.ditamap -f oxy-ug-pdf --filter=oXygen-ug/DITA/ditaval/developer.ditaval -output=publishing/oXygen-ug/developer -Doxy-ug-distribution=developer
 
 cp gh-pages/index.html publishing/index.html
 echo "====================================="
