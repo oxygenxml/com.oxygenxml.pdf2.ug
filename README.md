@@ -21,10 +21,11 @@ Project organization:
 
 To use this PDF customization plugin, use one of the following methods:
 
-* **From the Oxygen interface** - Follow the procedure found here: https://www.oxygenxml.com/doc/ug-editor/topics/dita-ot-install-plugin.html.
+* **From the Oxygen interface** - Follow these steps:
+1. Download the ZIP archive associated with this project by using the ``Clone or download`` button.
+2. To install the plugin and transform it, follow the procedure found here: https://www.oxygenxml.com/doc/versions/19.0/ug-editor/topics/dita-ot-install-plugin.html
 
 * **From a command line** - Follow these steps:
-
 1. Download **DITA-OT 2.4** 
 2. Download the ZIP archive associated with this project by using the ``Clone or download`` button.
 3. Install the plugin by running the command ``dita-ot-dir/bin/dita --install=plug-in-zip``. See more details in the [Installing plug-ins](http://www.dita-ot.org/2.4/dev_ref/plugins-installing.html) topic from the DITA-OT documentation.
