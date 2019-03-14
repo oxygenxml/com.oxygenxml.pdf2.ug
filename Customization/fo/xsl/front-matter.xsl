@@ -35,28 +35,30 @@
                         </fo:table-cell>
                         <fo:table-cell padding="1mm" text-align="left" color="white">
                             <fo:block-container start-indent="5mm" color="white">
-                                <!-- set the title -->
-                                <xsl:choose>
-                                    <xsl:when test="$map/*[contains(@class,' topic/title ')][1]">
-                                        <xsl:apply-templates select="$map/*[contains(@class,' topic/title ')][1]"/>
-                                    </xsl:when>
-                                    <xsl:when test="$map//*[contains(@class,' bookmap/mainbooktitle ')][1]">
-                                        <xsl:apply-templates select="$map//*[contains(@class,' bookmap/mainbooktitle ')][1]"/>
-                                    </xsl:when>
-                                    <xsl:when test="//*[contains(@class, ' map/map ')]/@title">
-                                        <xsl:value-of select="//*[contains(@class, ' map/map ')]/@title"/>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:value-of select="/descendant::*[contains(@class, ' topic/topic ')][1]/*[contains(@class, ' topic/title ')]"/>
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                                
-                                <!-- set the subtitle -->
-                                <xsl:apply-templates select="$map//*[contains(@class,' bookmap/booktitlealt ')]"/>
-                                
-                                <fo:block xsl:use-attribute-sets="__frontmatter__owner">
-                                    <xsl:apply-templates select="$map//*[contains(@class,' bookmap/bookmeta ')]"/>
-                                </fo:block>                                
+                                <fo:block>
+                                    <!-- set the title -->
+                                    <xsl:choose>
+                                        <xsl:when test="$map/*[contains(@class,' topic/title ')][1]">
+                                            <xsl:apply-templates select="$map/*[contains(@class,' topic/title ')][1]"/>
+                                        </xsl:when>
+                                        <xsl:when test="$map//*[contains(@class,' bookmap/mainbooktitle ')][1]">
+                                            <xsl:apply-templates select="$map//*[contains(@class,' bookmap/mainbooktitle ')][1]"/>
+                                        </xsl:when>
+                                        <xsl:when test="//*[contains(@class, ' map/map ')]/@title">
+                                            <xsl:value-of select="//*[contains(@class, ' map/map ')]/@title"/>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:value-of select="/descendant::*[contains(@class, ' topic/topic ')][1]/*[contains(@class, ' topic/title ')]"/>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                    
+                                    <!-- set the subtitle -->
+                                    <xsl:apply-templates select="$map//*[contains(@class,' bookmap/booktitlealt ')]"/>
+                                    
+                                    <fo:block xsl:use-attribute-sets="__frontmatter__owner">
+                                        <xsl:apply-templates select="$map//*[contains(@class,' bookmap/bookmeta ')]"/>
+                                    </fo:block>
+                                </fo:block>
                             </fo:block-container>
                         </fo:table-cell>
                     </fo:table-row>                    
